@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #032210;
+    padding: 20px 30px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin-top: 10px;
+}
+
+.navbar h1 {
+    margin-right: 350px;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+}
+
+.nav-list li {
+    margin-left: 20px;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-list li a:hover {
+    color: #20d352;
+}
