@@ -1,0 +1,65 @@
+.home-container {
+    background-image: url('../assets/img/bg-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
+        
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 550px;
+    background-color: rgba(63, 63, 63, 0.325);
+    border-radius: 10px;
+    z-index: 1;
+    left: 0;
+    right: 0;
+}
+
+.home-container h1, p{
+    position: relative;
+    text-align: center;
+    margin: 10px 0;
+    z-index: 2;
+}
+
+.home-container h1{
+    color:#20d352;
+    margin-top: 60px;
+    text-align: center;
+        /* Center the text */
+    font-size: 4rem;
+        /* Adjust font size as needed */
+    text-shadow:
+            1px 1px 0 rgba(3, 66, 0, 0.7),
+            /* Right bottom white shadow */
+            -1px -1px 0 rgba(3, 66, 0, 0.7),
+            /* Left top white shadow */
+            1px -1px 0 rgba(3, 66, 0, 0.7),
+            /* Right top white shadow */
+            -1px 1px 0 rgba(3, 66, 0, 0.7);
+            /* Left bottom white shadow */
+
+}
+.home-container p {
+    color: #e0e0e0;
+    font-size: 2.5rem;
+    text-shadow:
+            1px 1px 0 rgba(0, 0, 0, 0.7),
+            /* Right bottom white shadow */
+            -1px -1px 0 rgba(0, 0, 0, 0.7),
+            /* Left top white shadow */
+            1px -1px 0 rgba(0, 0, 0, 0.7),
+            /* Right top white shadow */
+            -1px 1px 0 rgba(0, 0, 0, 0.7);
+        /* Left bottom white shadow */
+    
+}

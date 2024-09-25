@@ -1,0 +1,81 @@
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #032210;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  /* Use flexbox for layout */
+  justify-content: flex-end;
+  /* Align items to the right */
+  padding: 20px 30px;
+  /* Padding for the navbar */
+}
+
+.navbar h1 {
+  margin-right: 220px;
+  color: rgb(0, 101, 10);
+  font-size: 5rem;
+}
+
+.nav-list {
+  list-style: none;
+  /* Remove default list styles */
+  display: flex;
+  /* Use flexbox for horizontal layout */
+}
+
+.nav-list li {
+  margin-left: 20px;
+  /* Space between each nav item */
+}
+
+.nav-list li a {
+  color: white;
+  /* Link color */
+  text-decoration: none;
+  /* Remove underline */
+  font-size: 1rem;
+  /* Font size */
+}
+
+.nav-list li a:hover {
+  text-decoration:#00cf0e;
+  /* Underline on hover */
+}
+/* Container Styles */
+
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #343a40;
+  /* Dark background */
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    /* Stack items on smaller screens */
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    /* Spacing for stacked items */
+  }
+}
