@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     border-radius: 10px;
     padding: 20px;
         
@@ -62,4 +63,21 @@
             -1px 1px 0 rgba(0, 0, 0, 0.7);
         /* Left bottom white shadow */
     
+}
+
+.home-container button {
+    padding: 10px;
+    background-color: #0d9935;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 2;
+    width: 130px;
+    margin-top: 20px;
+}
+
+.home-container button :hover {
+    color: #126410;
 }
