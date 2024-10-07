@@ -1,6 +1,6 @@
-/* Home Section */
+/* Home Section - About Container */
 .about-container {
-    background-image: url('../assets/img/bg-1.jpg');
+    background-image: url('../assets/img/bg-2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    position: relative;
 }
 
 .overlay {
@@ -23,10 +24,9 @@
 }
 
 .about-container h1,
-p {
+.about-container p {
     position: relative;
     text-align: center;
-    margin-top: 5px;
     z-index: 2;
 }
 
@@ -43,20 +43,125 @@ p {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), -1px -1px 0 rgba(0, 0, 0, 0.7), 1px -1px 0 rgba(0, 0, 0, 0.7), -1px 1px 0 rgba(0, 0, 0, 0.7);
 }
 
-.about-container button {
-    background-color: rgb(2, 84, 161);
-    color: white;
-    border: none;
-    padding: 14px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 40px;
-    z-index: 3;
-    position: relative;
-    margin-top: 30px;
-    width: 150px;
+/* Section Styles */
+.about-section-one,
+.about-section-two {
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+    /* Add some padding */
+    margin: 20px auto;
+    /* Center the sections */
+    max-width: 1200px;
+    /* Max width for content */
 }
 
-.about-container button:hover {
-    background-color: rgb(3, 133, 255);
+.about-section-one {
+    justify-content: flex-start;
+    /* Image on the left */
+}
+
+.about-section-two {
+    justify-content: flex-end;
+    /* Image on the right */
+}
+
+.section-image {
+    width: 50%;
+    /* Adjust as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    max-height: 400px;
+    /* Limit maximum height */
+    object-fit: cover;
+    /* Ensure the image covers the area */
+    border-radius: 8px;
+    /* Rounded corners */
+}
+
+/* Text Style */
+.section-text-one {
+    width: 45%;
+    /* Adjust as needed */
+    text-align: left;
+    /* Align text to the left */
+    text-align: center;
+    padding: 0 20px;
+    /* Horizontal padding */
+}
+
+.section-text-two {
+    width: 45%;
+    /* Adjust as needed */
+    text-align: left;
+    /* Align text to the left */
+    text-align: center;
+    padding: 0 20px;
+    /* Horizontal padding */
+}
+
+.about-section-one h2,
+.about-section-two h2 {
+    color: rgb(0, 132, 255);
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    /* Heading font size */
+}
+
+.about-section-one p,
+.about-section-two p {
+    color: #333;
+    font-size: 1.4rem;
+    /* Paragraph font size */
+    line-height: 1.6;
+    /* Line height */
+}
+
+.about-section-one{
+    margin-right: 50px;
+}
+
+.about-section-two{
+    margin-right: 110px;
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+
+    .about-section-one,
+    .about-section-two {
+        flex-direction: column;
+        /* Stack sections on mobile */
+        text-align: center;
+        /* Center text on mobile */
+    }
+
+    .section-image {
+        width: 100%;
+        /* Full width for mobile */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+
+    .section-text-one,
+    .section-text-two {
+        width: 100%;
+        /* Full width for text on mobile */
+        padding: 20px 0;
+        /* Padding for mobile */
+    }
+
+    .about-container {
+        height: auto;
+        /* Auto height for mobile */
+    }
+
+    .about-container h1 {
+        font-size: 3rem;
+        /* Smaller heading on mobile */
+    }
+
+    .about-container p {
+        font-size: 1.8rem;
+        /* Smaller paragraph on mobile */
+    }
 }
