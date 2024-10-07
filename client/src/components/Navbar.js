@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom'; // Import useLocation
 import "../styles/Navbar.css";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation(); // Get the current location
+
+    // Effect to close the menu on route change
+    useEffect(() => {
+        setIsOpen(false); // Close the menu when the location changes
+    }, [location]); // Only run when the location changes
 
     const toggleMenu = () => {
-        setIsOpen(!isOpen);
+        setIsOpen(!isOpen); // Toggle the menu open/close
     };
 
     return (
