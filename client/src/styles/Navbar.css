@@ -4,6 +4,7 @@
     align-items: center;
     padding: 20px 50px;
     background-color: rgb(2, 84, 161);
+    text-shadow: 2px 2px 0 rgba(3, 0, 66, 0.7), -1px -1px 0 rgba(3, 0, 66, 0.7), 1px -1px 0 rgba(3, 0, 66, 0.7), -1px 1px 0 rgba(3, 0, 66, 0.7);
     /* Background color */
     color: #e4e4e4;
     /* Text color */
