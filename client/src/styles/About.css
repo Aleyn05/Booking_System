@@ -100,6 +100,32 @@
     /* Horizontal padding */
 }
 
+.section-text-one,
+.section-text-two {
+    width: 45%;
+    /* Adjust as needed */
+    text-align: center;
+    /* Align text to the center */
+    padding: 20px;
+    /* Padding around the text */
+    border: 2px solid rgb(0, 132, 255);
+    /* Border color and thickness */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Background color for contrast */
+    border-radius: 10px;
+    /* Rounded corners for the border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Optional: add a subtle shadow */
+}
+
+.section-text-one{
+    margin-left: 50px;
+}
+
+.section-text-two{
+    margin-right: 50px;
+}
+
 .about-section-one h2,
 .about-section-two h2 {
     color: rgb(0, 132, 255);
@@ -118,50 +144,111 @@
 }
 
 .about-section-one{
-    margin-right: 50px;
+    margin-right: 90px;
 }
 
 .about-section-two{
-    margin-right: 110px;
+    margin-right: 70px;
 }
 /* Media Queries for Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+
+    .about-section-one,
+    .about-section-two {
+        margin-right: 20px;
+        /* Reduce margin on larger screens */
+    }
+}
+
+@media (max-width: 992px) {
 
     .about-section-one,
     .about-section-two {
         flex-direction: column;
-        /* Stack sections on mobile */
+        /* Stack sections */
         text-align: center;
-        /* Center text on mobile */
+        /* Center text */
+        margin: 0;
+        /* Remove margin */
     }
 
     .section-image {
         width: 100%;
-        /* Full width for mobile */
-        height: auto;
-        /* Maintain aspect ratio */
+        /* Full width for images */
+        max-height: 300px;
+        /* Limit max height */
     }
 
     .section-text-one,
     .section-text-two {
         width: 100%;
-        /* Full width for text on mobile */
-        padding: 20px 0;
-        /* Padding for mobile */
+        /* Full width for text */
+        padding: 10px;
+        /* Reduced padding */
+    }
+
+    .about-container h1 {
+        font-size: 2.5rem;
+        /* Smaller heading */
+    }
+
+    .about-container p {
+        font-size: 1.5rem;
+        /* Smaller paragraph */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .overlay {
+            height: 120px;
     }
 
     .about-container {
         height: auto;
         /* Auto height for mobile */
+        padding: 10px;
+        /* Reduced padding */
     }
 
     .about-container h1 {
-        font-size: 3rem;
-        /* Smaller heading on mobile */
+        font-size: 2rem;
+        /* Smaller heading */
     }
 
     .about-container p {
+        font-size: 1.2rem;
+        /* Smaller paragraph */
+    }
+
+    .section-text-one,
+    .section-text-two {
+        padding: 15px;
+        /* Adjust padding */
+    }
+}
+
+@media (max-width: 576px) {
+
+    .overlay{
+        height: 120px;
+    }
+
+    .about-container h1 {
         font-size: 1.8rem;
-        /* Smaller paragraph on mobile */
+        /* Further smaller heading */
+    }
+
+    .about-container p {
+        font-size: 1rem;
+        /* Further smaller paragraph */
+    }
+
+    .section-text-one,
+    .section-text-two {
+        padding: 10px;
+        /* Adjust padding */
+        margin: 10px 0;
+        /* Vertical spacing between sections */
     }
 }
