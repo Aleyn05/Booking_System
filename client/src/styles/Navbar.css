@@ -1,32 +1,86 @@
 .navbar {
     display: flex;
-    justify-content: flex-end;
-    background-color: #032210;
-    padding: 20px 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgb(2, 84, 161);
+    /* Background color */
+    color: #e4e4e4;
+    /* Text color */
+}
+.navbar-name {
+    color: #e4e4e4;
+    /* Set the text color */
+    text-decoration: none;
+    /* Remove underline */
+    font-size: 30px;
+    /* Set a suitable font size */
+}
+
+.menu-container {
+    display: flex;
+    /* Align Booking link and Hamburger icon side by side */
+    align-items: center;
+    /* Center vertically */
+}
+
+.booking-link {
+    color: #e4e4e4;
+    /* Link color for Booking */
+    text-decoration: none;
+    /* Remove underline */
+    margin-right: 20px;
+    /* Space between Booking link and hamburger icon */
+}
+
+.hamburger {
+    display: block;
+    /* Show hamburger icon on all screen sizes */
+    font-size: 30px;
+    cursor: pointer;
 }
 
 .nav-list {
+    display: none;
+    /* Hide the nav list by default */
     list-style: none;
-    display: flex;
-    margin-top: 10px;
-}
-
-.navbar h1 {
-    margin-right: 350px;
-    color: rgb(255, 255, 255);
-    font-size: 30px;
 }
 
 .nav-list li {
-    margin-left: 20px;
+    margin: 10px 0;
+    /* Margin for items in the hamburger menu */
 }
 
-.nav-list li a {
-    color: white;
+.nav-list a {
+    color: #e4e4e4;
+    /* Link color */
     text-decoration: none;
-    font-size: 1rem;
+    /* Remove underline */
 }
 
-.nav-list li a:hover {
-    color: #20d352;
+.nav-list.open {
+    display: flex;
+    /* Show the nav list when open */
+    flex-direction: column;
+    /* Stack items vertically */
+    position: absolute;
+    /* Position absolutely */
+    top: 79px;
+    /* Adjust based on navbar height */
+    left: 80%;
+    background-color: rgb(2, 84, 161);
+    /* Same background color as navbar */
+    width: 20%;
+    /* Full width */
+    z-index: 10;
+    /* Ensure it sits above other elements */
+    text-align: center;
+}
+
+/* Hide nav list on larger screens */
+@media (min-width: 769px) {
+    .nav-list {
+        display: none;
+        /* Keep it hidden on desktop size */
+    }
 }

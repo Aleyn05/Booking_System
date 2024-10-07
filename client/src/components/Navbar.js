@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import "../styles/Navbar.css"
+import "../styles/Navbar.css";
 
 function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <nav className="navbar">
-            <h1>La Palmeraie</h1>
-            <ul className="nav-list">
+            <Link to="/" className="navbar-name">La Palmeraie</Link>
+            <div className="menu-container">
+                <Link to="/booking" className="booking-link">Booking</Link>
+                <div className="hamburger" onClick={toggleMenu}>
+                    &#9776; {/* Hamburger icon */}
+                </div>
+            </div>
+            <ul className={`nav-list ${isOpen ? 'open' : ''}`}>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/offers">Offers</Link></li>
@@ -15,7 +27,6 @@ function Navbar() {
                 <li><Link to="/dining">Dining</Link></li>
                 <li><Link to="/facilities">Facilities</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/booking">Booking</Link></li>
             </ul>
         </nav>
     );
