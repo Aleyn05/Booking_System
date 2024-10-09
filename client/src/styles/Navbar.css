@@ -4,7 +4,7 @@
     align-items: center;
     padding: 20px 50px;
     background-color: rgb(2, 84, 161);
-    text-shadow: 2px 2px 0 rgba(3, 0, 66, 0.7), -1px -1px 0 rgba(3, 0, 66, 0.7), 1px -1px 0 rgba(3, 0, 66, 0.7), -1px 1px 0 rgba(3, 0, 66, 0.7);
+    text-shadow: 1px 1px 0 rgba(3, 0, 66, 0.7), -1px -1px 0 rgba(3, 0, 66, 0.7), 1px -1px 0 rgba(3, 0, 66, 0.7), -1px 1px 0 rgba(3, 0, 66, 0.7);
     /* Background color */
     color: #e4e4e4;
     /* Text color */
@@ -14,24 +14,27 @@
     /* Set the text color */
     text-decoration: none;
     /* Remove underline */
-    font-size: 30px;
+    font-family: "Rouge Script", cursive;
+    font-size: 50px;
+    font-weight: 550;
     /* Set a suitable font size */
+}
+
+.navbar-name:hover {
+    transform: scale(1.05);
+
 }
 
 .menu-container {
     display: flex;
     /* Align Booking link and Hamburger icon side by side */
     align-items: center;
+    font-size: 20px;
     /* Center vertically */
 }
 
-.booking-link {
-    color: #e4e4e4;
-    /* Link color for Booking */
-    text-decoration: none;
-    /* Remove underline */
-    margin-right: 20px;
-    /* Space between Booking link and hamburger icon */
+.menu-container:hover {
+    transform: scale(1.05);
 }
 
 .hamburger {
@@ -45,11 +48,17 @@
     display: none;
     /* Hide the nav list by default */
     list-style: none;
+    font-size: 20px;
 }
+
 
 .nav-list li {
     margin: 10px 0;
     /* Margin for items in the hamburger menu */
+}
+
+.nav-list li:hover {
+    transform: scale(1.05);
 }
 
 .nav-list a {
