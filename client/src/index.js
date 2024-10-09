@@ -6,9 +6,7 @@ import './styles/App.css'; // Import global styles if any
 // Create a root element for rendering
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// Render the App component into the root element
+// Render the App component into the root element without StrictMode
 root.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
+    <App />
 );
