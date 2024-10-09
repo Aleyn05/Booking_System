@@ -26,9 +26,8 @@ function Navbar() {
             <ul className={`nav-list ${isOpen ? 'open' : ''}`}>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/offers">Offers</Link></li>
-                <li><Link to="/weddings-events">Weddings & Events</Link></li>
+                <li><Link to="/weddings-events">Events</Link></li>
                 <li><Link to="/accommodations">Accommodations</Link></li>
-                <li><Link to="/dining">Dining</Link></li>
                 <li><Link to="/facilities">Facilities</Link></li>
                 <li><Link to="/booking">Booking</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
