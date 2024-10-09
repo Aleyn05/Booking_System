@@ -1,6 +1,6 @@
 /* Home Section */
 .home-container {
-    background-image: url('../assets/img/bg-1.jpg');
+    background-image: url('../assets/img/bg-2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@
     position: absolute;
     width: 80%;
     height: 550px;
-    background-color: rgba(63, 63, 63, 0.325);
+    background-color: rgba(94, 94, 94, 0.407);
     border-radius: 20px;
     z-index: 1;
 }
@@ -34,7 +34,10 @@ p {
     color: rgb(0, 132, 255);
     margin-top: 60px;
     font-size: 4rem;
-    text-shadow: 4px 4px 0 rgba(3, 0, 66, 0.7), -1px -1px 0 rgba(3, 66, 0, 0.7), 1px -1px 0 rgba(3, 66, 0, 0.7), -1px 1px 0 rgba(3, 66, 0, 0.7);
+    text-shadow: 1px 1px 0 rgb(0, 0, 0),
+        -1px -1px 0 rgb(0, 0, 0),
+        1px -1px 0 rgb(0, 0, 0),
+        -1px 1px 0 rgb(0, 0, 0);
 }
 
 .home-container p {
@@ -44,11 +47,13 @@ p {
 }
 
 .home-container button {
-    background-color: rgb(2, 84, 161);
+    background-color: rgb(0, 132, 255);
     color: white;
     border: none;
     padding: 14px;
+    font-family: "Lilita One", sans-serif;
     font-size: 1.2rem;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), -1px -1px 0 rgba(0, 0, 0, 0.7), 1px -1px 0 rgba(0, 0, 0, 0.7), -1px 1px 0 rgba(0, 0, 0, 0.7);
     cursor: pointer;
     border-radius: 40px;
     z-index: 3;
@@ -58,69 +63,116 @@ p {
 }
 
 .home-container button:hover {
-    background-color: rgb(3, 133, 255);
-}
-
-/* Gallery Section */
-.gallery-section {
-    padding: 50px 20px;
-    background-color: #e4e4e4;
-    text-align: center;
-}
-
-/* Updated Gallery Grid to always have 3 columns */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Always 3 columns */
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gallery-item {
     background-color: rgb(2, 84, 161);
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-item:hover {
     transform: scale(1.05);
 }
 
-.gallery-item img {
-    width: 100%;
-    height: 200px;
+/* Section Styles */
+.about-section-one,
+.about-section-two {
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+    /* Add some padding */
+    margin: 20px auto;
+    /* Center the sections */
+    max-width: 1200px;
+    /* Max width for content */
+}
+
+.about-section-one {
+    justify-content: flex-start;
+    /* Image on the left */
+}
+
+.about-section-two {
+    justify-content: flex-end;
+    /* Image on the right */
+}
+
+.section-image {
+    width: 50%;
+    /* Adjust as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    max-height: 400px;
+    /* Limit maximum height */
     object-fit: cover;
+    /* Ensure the image covers the area */
+    border-radius: 8px;
+    /* Rounded corners */
 }
 
-.gallery-item h3 {
-    font-weight: 100;
-    font-size: 1.4rem;
-    text-shadow: 4px 4px 0 rgba(3, 0, 66, 0.7), -1px -1px 0 rgba(3, 0, 66, 0.7), 1px -1px 0 rgba(3, 0, 66, 0.7), -1px 1px 0 rgba(3, 0, 66, 0.7);
-    margin: 10px 0;
-    color: #333;
+/* Text Style */
+.section-text-one {
+    width: 45%;
+    /* Adjust as needed */
+    text-align: left;
+    /* Align text to the left */
+    text-align: center;
+    padding: 0 20px;
+    /* Horizontal padding */
 }
 
-.gallery-item p {
-    font-size: 1rem;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7), -1px -1px 0 rgba(0, 0, 0, 0.7), 1px -1px 0 rgba(0, 0, 0, 0.7), -1px 1px 0 rgba(0, 0, 0, 0.7);
-    color: #666;
-    margin-bottom: 15px;
+.section-text-two {
+    width: 45%;
+    /* Adjust as needed */
+    text-align: left;
+    /* Align text to the left */
+    text-align: center;
+    padding: 0 20px;
+    /* Horizontal padding */
 }
 
-/* Link Styling */
-.gallery-item h3 a,
-.gallery-item p a {
-    text-decoration: none;
-    color: #e4e4e4;
+.section-text-one,
+.section-text-two {
+    width: 45%;
+    /* Adjust as needed */
+    text-align: center;
+    /* Align text to the center */
+    padding: 20px;
+    /* Padding around the text */
+    border: 2px solid rgb(0, 132, 255);
+    /* Border color and thickness */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Background color for contrast */
+    border-radius: 10px;
+    /* Rounded corners for the border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Optional: add a subtle shadow */
 }
 
-.gallery-item h3 a:hover,
-.gallery-item p a:hover {
+.section-text-one {
+    margin-left: 50px;
+}
+
+.section-text-two {
+    margin-right: 50px;
+}
+
+.about-section-one h2,
+.about-section-two h2 {
     color: rgb(0, 132, 255);
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    /* Heading font size */
+}
+
+.about-section-one p,
+.about-section-two p {
+    color: #333;
+    font-size: 1.4rem;
+    /* Paragraph font size */
+    line-height: 1.6;
+    /* Line height */
+}
+
+.about-section-one {
+    margin-right: 90px;
+}
+
+.about-section-two {
+    margin-right: 70px;
 }
 
 /* Responsive Styles */
@@ -138,15 +190,59 @@ p {
         font-size: 1rem;
     }
 
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 columns on medium screens */
+    .about-section-one,
+    .about-section-two {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .section-image {
+        width: 80%;
+        max-height: 300px;
+        margin-bottom: 20px;
+        /* Add some space between the image and the text */
+    }
+    
+    .section-text-one,
+    .section-text-two {
+        width: 90%;
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .about-section-one h2,
+    .about-section-two h2 {
+        font-size: 2rem;
+    }
+    
+    .about-section-one p,
+    .about-section-two p {
+            font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        /* 1 column on small screens */
+    .section-image {
+        width: 100%;
+        max-height: 250px;
+    }
+    
+    .section-text-one,
+    .section-text-two {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .about-section-one h2,
+    .about-section-two h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-section-one p,
+    .about-section-two p {
+            font-size: 1rem;
     }
 }
