@@ -10,7 +10,7 @@ function Home() {
         <div>
             {/* Home Section */}
             <div className="home-container">
-                <div className="overlay"></div>
+                <div className="overlay-home"></div>
                 <h1>Welcome to La Palmeraie Resort</h1>
                 <p>Your perfect getaway awaits!</p>
                 <Link to="/booking">

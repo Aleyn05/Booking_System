@@ -9,7 +9,7 @@ function Events() {
         <div>
             {/* Home Section */}
             <div className="events-container">
-                <div className="overlay"></div>
+                <div className="overlay-events"></div>
                 <h1>Events</h1>
                 <p>Host your Special Events with us!</p>
             </div>
