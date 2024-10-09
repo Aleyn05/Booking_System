@@ -2,56 +2,45 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css'; // Import the CSS file
 
+import pic1 from '../assets/img/pic-1.jpg'; // First image
+import pic2 from '../assets/img/pic-1.jpg'; // Second image
+
 function Home() {
     return (
         <div>
             {/* Home Section */}
             <div className="home-container">
                 <div className="overlay"></div>
-                <h1>Welcome to Our Resort</h1>
+                <h1>Welcome to La Palmeraie Resort</h1>
                 <p>Your perfect getaway awaits!</p>
                 <Link to="/booking">
                     <button type="button">Book Now</button>
                 </Link>
             </div>
 
-            {/* Gallery Section */}
-            <section className="gallery-section">
-                <div className="gallery">
-                    <div className="gallery-grid">
-                        <div className="gallery-item">
-                            <img src={require('../assets/img/pic-1.jpg')} alt="About La Palmeraie" />
-                            <h3><Link to="/about">About La Palmeraie</Link></h3>
-                            <p><Link to="/about">Read More</Link></p>
-                        </div>
-                        <div className="gallery-item">
-                            <img src={require('../assets/img/pic-1.jpg')} alt="Offers" />
-                            <h3><Link to="/offers">Offers</Link></h3>
-                            <p><Link to="/offers">Read More</Link></p>
-                        </div>
-                        <div className="gallery-item">
-                            <img src={require('../assets/img/pic-1.jpg')} alt="Weddings & Events" />
-                            <h3><Link to="/weddings-events">Weddings & Events</Link></h3>
-                            <p><Link to="/weddings-events">Read More</Link></p>
-                        </div>
-                        <div className="gallery-item">
-                            <img src={require('../assets/img/pic-1.jpg')} alt="Accommodations" />
-                            <h3><Link to="/accommodations">Accommodations</Link></h3>
-                            <p><Link to="/accommodations">Read More</Link></p>
-                        </div>
-                        <div className="gallery-item">
-                            <img src={require('../assets/img/pic-1.jpg')} alt="Dining" />
-                            <h3><Link to="/dining">Dining</Link></h3>
-                            <p><Link to="/dining">Read More</Link></p>
-                        </div>
-                        <div className="gallery-item">
-                            <img src={require('../assets/img/pic-1.jpg')} alt="Facilities" />
-                            <h3><Link to="/facilities">Facilities</Link></h3>
-                            <p><Link to="/facilities">Read More</Link></p>
-                        </div>
-                    </div>
+             {/* Section 1: Image on the left, text on the right */}
+            <div className="about-section-one">
+                <img src={pic1} alt="Resort view" className="section-image" />
+                <div className="section-text-one">
+                    <h2>Our Exclusive Locations</h2>
+                    <p>
+                        Our resort is located in pristine environments, offering breathtaking views and private
+                        beaches. Enjoy a unique blend of natural beauty and modern luxury.
+                    </p>
                 </div>
-            </section>
+            </div>
+
+            {/* Section 2: Image on the right, text on the left */}
+            <div className="about-section-two">
+                <div className="section-text-two">
+                    <h2>Unmatched Amenities</h2>
+                    <p>
+                        Indulge in our world-class amenities, including a spa, gourmet dining, and endless recreational 
+                        activities. Perfect for families, couples, and solo travelers.
+                    </p>
+                </div>
+                <img src={pic2} alt="Resort amenities" className="section-image" />
+            </div>
         </div>
     );
 }
