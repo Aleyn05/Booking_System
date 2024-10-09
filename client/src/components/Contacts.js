@@ -43,7 +43,7 @@ function Contacts() {
 
     return (
         <div className="contacts-container">
-            <div className="overlay"></div>
+            <div className="overlay-contacts"></div>
             <h1>Contact Us</h1>
             <div className="contact-map-container">
                 <div className="map-container">
@@ -102,7 +102,7 @@ function Contacts() {
                     <button type="submit">Send Message</button>
 
                     {/* Contact Information */}
-                    <div className="contact-info">
+                    <div className="contact-infos">
                         <h2>Contact Information</h2>
                         <p>Phone: (123) 456-7890</p>
                         <p>Landline: (098) 765-4321</p>

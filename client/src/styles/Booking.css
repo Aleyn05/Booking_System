@@ -1,14 +1,156 @@
-.bookin-container {
+/* Booking.css */
+
+.booking-container {
+    background-image: url('../assets/img/bg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    /* Ensure the container's height adjusts based on content */
+    min-height: 700px;
+    /* Minimum height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    border-radius: 8px;
-    background-color: #032210;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.overlay-booking {
+    width: 80%;
+    height: auto;
+    /* Set to auto to adjust based on content */
+    background-color: rgba(59, 59, 59, 0.61);
+    border-radius: 20px;
+    z-index: 1;
+    position: relative;
+    padding: 20px;
+    /* Add padding for spacing */
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: center;
+    /* Center align items */
+}
+
+/* Booking options styling */
+.booking-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.guest-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.guest-name,
+.guest-height {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.guest-height {
+    margin-right: 0;
+}
+
+h1,
+p,
+form,
+button,
+h2 {
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
-    color: #ffffff;
+    text-align: center;
+    color: #fff;
 }
 
 p {
-    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.cottage-selection {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping if needed */
+    gap: 10px;
+    /* Space between checkboxes */
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
+}
+
+.cottage-option {
+    flex: 1 0 150px;
+    /* Adjust based on your design preference */
+    display: flex;
+    align-items: center;
+    /* Align checkbox and label vertically */
+    justify-content: center;
+    /* Center the content within each option */
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+h2 {
+    text-align: center;
+    color: #d9534f;
+    margin-top: 20px;
 }

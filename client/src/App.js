@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-
-// import the pages 
+// Import the pages
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Offers from './components/Offers';
@@ -11,17 +10,17 @@ import Facilities from './components/Facilities';
 import Booking from './components/Booking';
 import Contacts from './components/Contacts';
 
-// import the integrated API for Chatbot
+// Import the Chatbot component
 import Chatbot from './components/Chatbot';
 
-// import the the style 
+// Import the styles
 import './styles/App.css';
 
 function App() {
     return (
         <Router>
             <div>
-                <Navbar/>
+                <Navbar />
                 <div className="app-container">
                     <Routes>
                         <Route path="/" element={<Home />} />
