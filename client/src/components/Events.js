@@ -11,7 +11,7 @@ function Events() {
             <div className="events-container">
                 <div className="overlay"></div>
                 <h1>Events</h1>
-                <p>Host you Special Events with us!</p>
+                <p>Host your Special Events with us!</p>
             </div>
 
              {/* Section 1: Image on the left, text on the right */}
