@@ -1,53 +1,82 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Chatbot = () => {
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.id = 'messenger-widget-b';
-        script.src = 'https://cdn.botpenguin.com/website-bot.js';
-        script.defer = true;
-        script.setAttribute('data-bot-id', '6706201db561b00b97c70a3d,670615db65fb7611293f479c');
+    const [loading, setLoading] = useState(true);
 
-        // Handle script load error
-        script.onerror = (e) => {
-            console.error("Error loading the chatbot script: ", e);
+    useEffect(() => {
+        const loadScript = (src) => {
+            return new Promise((resolve, reject) => {
+                // Check if the script is already loaded
+                if (document.getElementById('botpenguin-script')) {
+                    console.log("BotPenguin script already exists.");
+                    resolve();
+                    return;
+                }
+
+                // Create and append the script
+                const script = document.createElement('script');
+                script.src = src;
+                script.defer = true;
+                script.id = 'botpenguin-script'; // Track the script
+                script.onload = () => {
+                    console.log("BotPenguin script loaded successfully.");
+                    resolve();
+                };
+                script.onerror = (e) => {
+                    console.error(`Failed to load script: ${src}`, e);
+                    reject(new Error(`Failed to load script: ${src}`));
+                };
+                document.body.appendChild(script);
+            });
         };
 
-        // Script load success
-        script.onload = () => {
-            console.log("Chatbot script loaded successfully.");
+        const initializeBotPenguin = async () => {
+            try {
+                await loadScript('https://cdn.botpenguin.com/website-bot.js');
 
-            // Ensure BotPenguin is available
-            if (window.BotPenguin) {
-                console.log("BotPenguin object found, initializing...");
-
-                try {
-                    // Check for any required initialization and configuration
-                    window.BotPenguin.initialize({
-                        botId: '6706201db561b00b97c70a3d,670615db65fb7611293f479c',
-                        configuration: {
-                            customStyle: {
-                                color: '#000', // Example custom style if applicable
-                            }
-                        }
-                    });
-                } catch (error) {
-                    console.error("Error during BotPenguin initialization: ", error);
+                // Wait for BotPenguin to be available
+                if (!window.BotPenguin) {
+                    throw new Error("BotPenguin script loaded, but window.BotPenguin is not defined.");
                 }
-            } else {
-                console.error("BotPenguin object not found after script load.");
+
+                window.BotPenguin.initialize({
+                    botId: '6706201db561b00b97c70a3d', // Your bot ID
+                    configuration: {
+                        customStyle: {
+                            color: '#000',
+                        },
+                    },
+                });
+                console.log("Chatbot initialized successfully.");
+            } catch (error) {
+                console.error("Error initializing the chatbot:", error);
+            } finally {
+                setLoading(false);
             }
         };
 
-        document.body.appendChild(script);
+        // Call the function to load and initialize the chatbot
+        initializeBotPenguin();
 
         // Cleanup function to remove the script when the component unmounts
         return () => {
-            document.body.removeChild(script);
+            const script = document.getElementById('botpenguin-script');
+            if (script) {
+                document.body.removeChild(script);
+                console.log("Chatbot script removed.");
+            }
         };
     }, []);
 
-    return <div className="chatbot-container">Chatbot is loading...</div>;
+    return (
+        <div className="chatbot-container">
+            {loading ? (
+                <p>Chatbot is loading...</p>
+            ) : (
+                <p>Chatbot is ready to assist you!</p>
+            )}
+        </div>
+    );
 };
 
 export default Chatbot;
