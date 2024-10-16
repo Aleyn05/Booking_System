@@ -1,0 +1,141 @@
+.payment-container {
+    background-image: url('../assets/img/bg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.overlay-payment {
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(59, 59, 59, 0.61);
+    /* Darker background for better contrast */
+    border-radius: 15px;
+    padding: 30px 40px;
+    text-align: center;
+    /* Center text for a neat layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-container h1 {
+    padding: 30px;
+}
+
+.payment-details p {
+    color: #fff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow';
+    margin: 10px 0;
+    font-size: 20px;
+    text-shadow: 1px 1px 0 rgb(0, 0, 0),
+        -1px -1px 0 rgb(0, 0, 0),
+        1px -1px 0 rgb(0, 0, 0),
+        -1px 1px 0 rgb(0, 0, 0);
+}
+
+.payment-details h2 {
+    color: #d9534f;
+    font-weight: lighter;
+    text-shadow: 2px 2px 0 rgb(0, 0, 0),
+            -1px -1px 0 rgb(0, 0, 0),
+            1px -1px 0 rgb(0, 0, 0),
+            -1px 1px 0 rgb(0, 0, 0);
+}
+
+.payment-methods {
+    margin-top: 20px;
+    width: 100%;
+    /* Full width for a cleaner layout */
+    display: flex;
+    justify-content: center;
+    /* Center the images */
+    gap: 20px;
+    /* Space between images */
+    flex-wrap: nowrap;
+    /* Keep all images in a single row */
+}
+
+.payment-methods label {
+    display: flex;
+    flex-direction: column;
+    /* Stack the image and hidden radio button */
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    /* Maintain consistent font size */
+}
+
+.payment-image {
+    width: 100px;
+    /* Set a specific width for uniformity */
+    height: 100px;
+    /* Set a specific height to ensure all images are the same size */
+    border-radius: 8px;
+    /* Slightly rounded corners for the images */
+    transition: transform 0.2s;
+    /* Smooth transform effect */
+    object-fit: contain;
+    /* Maintain aspect ratio of the images */
+}
+
+.payment-image:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge the image on hover */
+}
+
+.payment-image.selected {
+    border: 2px solid #28a745;
+    /* Highlight selected payment method with a border */
+}
+
+.payment-button {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-button:hover {
+    background-color: #218838;
+    /* Darker shade on hover */
+}
+
+.payment-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Add a media query for responsiveness */
+@media (max-width: 768px) {
+    .overlay-payment {
+        padding: 20px;
+        /* Reduce padding for smaller screens */
+    }
+
+    .payment-methods {
+        flex-direction: column;
+        /* Stack payment method images vertically */
+        align-items: center;
+        /* Center align images */
+    }
+
+    .payment-methods label {
+        margin-bottom: 15px;
+        /* Space between images */
+    }
+}

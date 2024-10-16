@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate for redirection
 import '../styles/Booking.css';
 
 function Booking() {
     const [date, setDate] = useState('');
     const [numGuests, setNumGuests] = useState(1);
     const [guestNames, setGuestNames] = useState(['']);
-    const [guestEmail, setGuestEmail] = useState(''); // Single email state
+    const [guestEmail, setGuestEmail] = useState('');
     const [guestHeights, setGuestHeights] = useState(['']);
     const [bookingType, setBookingType] = useState('public');
     const [selectedCottages, setSelectedCottages] = useState([]);
+
+    const navigate = useNavigate();  // Initialize navigate
 
     // Define cottages with their prices and capacities
     const cottagesInfo = {
@@ -36,7 +39,7 @@ function Booking() {
     };
 
     const handleEmailChange = (value) => {
-        setGuestEmail(value); // Update email directly
+        setGuestEmail(value);
     };
 
     const handleCottageChange = (cottage) => {
@@ -49,8 +52,20 @@ function Booking() {
         });
     };
 
+    const calculateGuestPrice = () => {
+        return guestHeights.reduce((total, height) => {
+            if (height <= 145) {
+                return total + 50;
+            } else {
+                return total + 80;
+            }
+        }, 0);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Prepare guest details for display or API submission
         const guestDetails = guestNames
             .map((name, index) => {
                 const height = guestHeights[index] || 'N/A';
@@ -60,13 +75,26 @@ function Booking() {
             .join(', ');
 
         const cottages = selectedCottages.join(', ');
-        
+
         // Calculate total price based on selected cottages and their capacities
-        const totalPrice = selectedCottages.reduce((total, cottage) => {
+        const totalCottagePrice = selectedCottages.reduce((total, cottage) => {
             return total + cottagesInfo[cottage].price;
         }, 0);
-        
-        alert(`Booking submitted for ${numGuests} guests in ${cottages} cottage(s): ${guestDetails} on ${date}. Total Price: $${totalPrice}`);
+
+        const totalGuestPrice = calculateGuestPrice(); // Calculate guest price based on heights
+        const totalPrice = totalCottagePrice + totalGuestPrice;
+
+        // Redirect to the payment page, passing booking details as state
+        const bookingDetails = {
+            date,
+            numGuests,
+            guestDetails,
+            cottages,
+            totalPrice,
+            guestEmail
+        };
+
+        navigate('/payment', { state: { bookingDetails } });
     };
 
     return (
@@ -98,7 +126,7 @@ function Booking() {
                             onChange={() => {
                                 setBookingType('private');
                                 setGuestHeights(Array(numGuests).fill(''));
-                                setGuestNames(Array(numGuests).fill('')); // Clear names when switching to private
+                                setGuestNames(Array(numGuests).fill(''));
                                 setSelectedCottages([]);
                             }}
                         />
@@ -162,13 +190,12 @@ function Booking() {
                                     value={guestHeights[index]}
                                     onChange={(e) => handleHeightChange(index, e.target.value)}
                                     required
-                                    size={guestHeights[index] ? Math.max(1, guestHeights[index].length) : 1}
                                 />
                             </div>
                         </div>
                     ))}
 
-                    {/* Cottage selection moved here */}
+                    {/* Cottage selection */}
                     {bookingType === 'public' && (
                         <div>
                             <label>Select Cottages:</label>

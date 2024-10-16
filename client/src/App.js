@@ -9,6 +9,7 @@ import Events from './components/Events';
 import Facilities from './components/Facilities';
 import Booking from './components/Booking';
 import Contacts from './components/Contacts';
+import Payment from './components/Payment';
 
 // Import the Chatbot component
 import Chatbot from './components/Chatbot';
@@ -29,6 +30,7 @@ function App() {
                         <Route path="/facilities" element={<Facilities />} />
                         <Route path="/contact" element={<Contacts />} />
                         <Route path="/booking" element={<Booking />} />
+                        <Route path="/payment" element={<Payment />} />
                     </Routes>
                 </div>
                 <Chatbot />
